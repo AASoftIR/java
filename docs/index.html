@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمایش پروژه‌های جاوا</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>پروژه‌های جاوا</h2>
+                <div class="theme-toggle"><i class="fas fa-moon"></i></div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul id="project-list">
+                    <li><a href="#intro" class="active">معرفی</a></li>
+                    <li><a href="#project1">مستطیل</a></li>
+                    <li><a href="#project2">نام در مستطیل</a></li>
+                    <li><a href="#project3">رسم مستطیل با ورودی کاربر</a></li>
+                    <li><a href="#project4">جابجایی زمان</a></li>
+                    <li><a href="#project5">ورودی/خروجی زمان</a></li>
+                    <li><a href="#project6">کلاس زمان</a></li>
+                    <li><a href="#project7">خواندن و نمایش زمان</a></li>
+                    <li><a href="#project8">یافتن بزرگترین زمان</a></li>
+                    <li><a href="#project9">جمع زمان‌ها</a></li>
+                    <li><a href="#project10">شمارنده محدوده حقوق</a></li>
+                    <li><a href="#project11">محاسبه جمع توان‌ها</a></li>
+                    <li><a href="#project12">محاسبه سرمایه آینده</a></li>
+                    <li><a href="#project13">محاسبه زمان دوبرابر شدن</a></li>
+                    <li><a href="#project14">محاسبه زمان دوبرابر شدن (اشکال‌دار)</a></li>
+                    <li><a href="#project15">خواندن زمان محلی</a></li>
+                    <li><a href="#project16">پایگاه داده اشخاص</a></li>
+                    <li><a href="#final">پروژه نهایی: سیستم مدیریت تیم</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="content">
+            <!-- معرفی -->
+            <section id="intro" class="project-section active">
+                <div class="project-header">
+                    <h1>معرفی پروژه‌های جاوا</h1>
+                    <span class="project-date">ترم پاییز ۱۴۰۲</span>
+                </div>
+                <div class="project-description">
+                    <p>این صفحه مجموعه تمرین‌های مختلف جاوا را نمایش می‌دهد. برای مشاهده هر پروژه روی نام آن در منو کلیک کنید.</p>
+                </div>
+            </section>
+
+            <!-- پروژه 1: RectangleOutline.java -->
+            <section id="project1" class="project-section">
+                <div class="project-header">
+                    <h2>رسم مستطیل</h2>
+                    <span class="project-date">تمرین ۱</span>
+                </div>
+                <div class="project-description">
+                    <p>رسم مستطیل توخالی با کاراکتر ‘*’.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>RectangleOutline.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\1\RectangleOutline.java
+public class InsideRectangle {
+   public static void main(String[] args) {
+      int rows = 4;
+      int columns = 5;
+      for (int i = 1; i <= rows; i++) {
+         for (int j = 1; j <= columns; j++) {
+            if (i == 1 || i == rows || j == 1 || j == columns) {
+               System.out.print("*");
+            } else {
+               System.out.print(" ");
+            }
+         }
+         System.out.println();
+      }
+   }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 2: NameInRectangle.java -->
+            <section id="project2" class="project-section">
+                <div class="project-header">
+                    <h2>نام در مستطیل</h2>
+                    <span class="project-date">تمرین ۲</span>
+                </div>
+                <div class="project-description">
+                    <p>چاپ نام وسط یک مستطیل حاشیه‌ای با علامت ‘$’.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>NameInRectangle.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\2\NameInRectangle.java
+public class MyNameRectangle {
+   public static void main(String[] args) {
+      int rows = 7;
+      int columns = 15;
+      String name = "Alireza";
+      for (int i = 1; i <= rows; i++) {
+         for (int j = 1; j <= columns; j++) {
+            if (i == 1 || i == rows || j == 1 || j == columns) {
+               System.out.print("$");
+            } else if (i == (rows + 1)/2 && j >= (columns - name.length())/2 + 1 
+                       && j < (columns - name.length())/2 + name.length() + 1) {
+               System.out.print(name.charAt(j - (columns - name.length())/2 - 1));
+            } else {
+               System.out.print(" ");
+            }
+         }
+         System.out.println();
+      }
+   }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 3: RectangleDrawerUserInput.java -->
+            <section id="project3" class="project-section">
+                <div class="project-header">
+                    <h2>رسم مستطیل با ورودی کاربر</h2>
+                    <span class="project-date">تمرین ۳</span>
+                </div>
+                <div class="project-description">
+                    <p>رسم مستطیل بر اساس تعداد سطر و ستون ورودی کاربر.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>RectangleDrawerUserInput.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\3\RectangleDrawerUserInput.java
+import java.util.Scanner;
+public class RectangleDrawer {
+   public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the number of rows: ");
+      int rows = input.nextInt();
+      System.out.print("Enter the number of columns: ");
+      int columns = input.nextInt();
+      for (int i = 1; i <= rows; i++) {
+         for (int j = 1; j <= columns; j++) {
+            if (i == 1 || i == rows || j == 1 || j == columns) {
+               System.out.print("*");
+            } else {
+               System.out.print(" ");
+            }
+         }
+         System.out.println();
+      }
+      input.close();
+   }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 4: TimeShifting.java -->
+            <section id="project4" class="project-section">
+                <div class="project-header">
+                    <h2>جابجایی زمان</h2>
+                    <span class="project-date">تمرین ۴</span>
+                </div>
+                <div class="project-description">
+                    <p>تغییر ساعت و دقیقه دو شیء Time.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>TimeShifting.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\4\TimeShifting.java
+public class TimeShifting {
+   public static void main(String[] args) {
+       Time t1 = new Time(10, 12, 14);
+       Time t2 = new Time(12, 18, 20);
+       t1.minute += 6;
+       t2.hour -= 2;
+       t1.displayTime();
+       t2.displayTime();
+   }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 5: TimeInputOutput.java -->
+            <section id="project5" class="project-section">
+                <div class="project-header">
+                    <h2>ورودی/خروجی زمان</h2>
+                    <span class="project-date">تمرین ۵</span>
+                </div>
+                <div class="project-description">
+                    <p>خواندن و نمایش زمان با ساعت و دقیقه.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>TimeInputOutput.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\5\TimeInputOutput.java
+import java.util.Scanner;
+public class Time {
+  private int hours;
+  private int minutes;
+  public Time() {}
+  public void readTime() {
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Enter hours: ");
+    hours = scanner.nextInt();
+    System.out.print("Enter minutes: ");
+    minutes = scanner.nextInt();
+  }
+  public void displayTime() {
+    System.out.println("Time: " + hours + ":" + minutes);
+  }
+  public static void main(String[] args) {
+    Time[] times = new Time[5];
+    for (int i = 0; i < 5; i++) {
+      times[i] = new Time();
+      times[i].readTime();
+    }
+    for (int i = 0; i < 5; i++) {
+      times[i].displayTime();
+    }
+  }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 6: Time.java -->
+            <section id="project6" class="project-section">
+                <div class="project-header">
+                    <h2>کلاس زمان</h2>
+                    <span class="project-date">تمرین ۶</span>
+                </div>
+                <div class="project-description">
+                    <p>تعریف کلاس Time با خواندن و نمایش hh:mm:ss.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>Time.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\6\Time.java
+import java.util.Scanner;
+public class Time {
+    private int hour;
+    private int minute;
+    private int second;
+    public Time() { this.hour = 0; this.minute = 0; this.second = 0; }
+    public Time(int hour, int minute, int second) {
+        this.hour = hour;
+        this.minute = minute;
+        this.second = second;
+    }
+    public void readTime() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter time (in format hh:mm:ss): ");
+        String timeStr = scanner.nextLine();
+        String[] timeParts = timeStr.split(":");
+        this.hour = Integer.parseInt(timeParts[0]);
+        this.minute = Integer.parseInt(timeParts[1]);
+        this.second = Integer.parseInt(timeParts[2]);
+    }
+    public void displayTime() {
+        String timeStr = String.format("%02d:%02d:%02d", this.hour, this.minute, this.second);
+        System.out.println(timeStr);
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 7: ReadAndDisplayTimes.java -->
+            <section id="project7" class="project-section">
+                <div class="project-header">
+                    <h2>خواندن و نمایش زمان</h2>
+                    <span class="project-date">تمرین ۷</span>
+                </div>
+                <div class="project-description">
+                    <p>خواندن ۵ زمان و نمایش آنها.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>ReadAndDisplayTimes.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\7\ReadAndDisplayTimes.java
+public class ReadAndDisplayTimes {
+    public static void main(String[] args) {
+        Time[] times = new Time[5];
+        for (int i = 0; i < 5; i++) {
+            Time t = new Time();
+            t.readTime();
+            times[i] = t;
+        }
+        for (int i = 0; i < 5; i++) {
+            times[i].displayTime();
+        }
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 8: FindLargestTime.java -->
+            <section id="project8" class="project-section">
+                <div class="project-header">
+                    <h2>یافتن بزرگترین زمان</h2>
+                    <span class="project-date">تمرین ۸</span>
+                </div>
+                <div class="project-description">
+                    <p>یافتن بزرگ‌ترین زمان از میان ۴ زمان.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>FindLargestTime.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\8\FindLargestTime.java
+public class FindLargestTime {
+    public static void main(String[] args) {
+        Time[] times = new Time[4];
+        for (int i = 0; i < 4; i++) {
+            Time t = new Time();
+            t.readTime();
+            times[i] = t;
+        }
+        Time largest = times[0];
+        for (int i = 1; i < 4; i++) {
+            if (times[i].hour > largest.hour) {
+                largest = times[i];
+            } else if (times[i].hour == largest.hour && times[i].minute > largest.minute) {
+                largest = times[i];
+            } else if (times[i].hour == largest.hour && times[i].minute == largest.minute && times[i].second > largest.second) {
+                largest = times[i];
+            }
+        }
+        largest.displayTime();
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 9: SumOfTimes.java -->
+            <section id="project9" class="project-section">
+                <div class="project-header">
+                    <h2>جمع زمان‌ها</h2>
+                    <span class="project-date">تمرین ۹</span>
+                </div>
+                <div class="project-description">
+                    <p>جمع ۴ زمان و نمایش حاصل.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>SumOfTimes.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\9\SumOfTimes.java
+public class SumOfTimes {
+    public static void main(String[] args) {
+        Time[] times = new Time[4];
+        int totalSeconds = 0;
+        for (int i = 0; i < 4; i++) {
+            Time t = new Time();
+            t.readTime();
+            times[i] = t;
+            totalSeconds += t.hour * 3600 + t.minute * 60 + t.second;
+        }
+        int hours = totalSeconds / 3600;
+        int minutes = (totalSeconds % 3600) / 60;
+        int seconds = totalSeconds % 60;
+        Time sum = new Time(hours, minutes, seconds);
+        sum.displayTime();
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 10: SalaryRangeCounter.java -->
+            <section id="project10" class="project-section">
+                <div class="project-header">
+                    <h2>شمارنده محدوده حقوق</h2>
+                    <span class="project-date">تمرین ۱۰</span>
+                </div>
+                <div class="project-description">
+                    <p>شمارش کسانی که حقوقشان بین ۱۰,۰۰۰ و ۲۰,۰۰۰ است.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>SalaryRangeCounter.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\10\SalaryRangeCounter.java
+import java.util.Scanner;
+public class SalaryCounter {
+   public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+      int numberOfEmployees = 10;
+      int count = 0;
+      for (int i = 1; i <= numberOfEmployees; i++) {
+         System.out.printf("Enter the salary of employee %d: ", i);
+         double salary = input.nextDouble();
+         if (salary > 10000 && salary < 20000) {
+            count++;
+         }
+      }
+      System.out.printf("%d employees receive salaries between 10,000 and 20,000.", count);
+      input.close();
+   }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 11: PowerSumCalculator.java -->
+            <section id="project11" class="project-section">
+                <div class="project-header">
+                    <h2>محاسبه جمع توان‌ها</h2>
+                    <span class="project-date">تمرین ۱۱</span>
+                </div>
+                <div class="project-description">
+                    <p>محاسبه مجموع i^i برای i از ۱ تا n.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>PowerSumCalculator.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\11\PowerSumCalculator.java
+import java.util.Scanner;
+public class PowerSumCalculator {
+   public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the value of n: ");
+      int n = input.nextInt();
+      int sum = 0;
+      for (int i = 1; i <= n; i++) {
+         sum += power(i, i);
+      }
+      System.out.printf("The sum of powers of numbers from 1 to %d is %d", n, sum);
+      input.close();
+   }
+   public static int power(int base, int exponent) {
+      int result = 1;
+      for (int i = 1; i <= exponent; i++) {
+         result *= base;
+      }
+      return result;
+   }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 12: FutureCapitalCalculator.java -->
+            <section id="project12" class="project-section">
+                <div class="project-header">
+                    <h2>محاسبه سرمایه آینده</h2>
+                    <span class="project-date">تمرین ۱۲</span>
+                </div>
+                <div class="project-description">
+                    <p>محاسبه سرمایه پس از n سال با نرخ بهره.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>FutureCapitalCalculator.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\12\FutureCapitalCalculator.java
+import java.util.Scanner;
+public class CapitalCalculator {
+   public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the initial capital: ");
+      double capital = input.nextDouble();
+      System.out.print("Enter the annual bank interest rate (%): ");
+      double interestRate = input.nextDouble() / 100;
+      System.out.print("Enter the number of years: ");
+      int years = input.nextInt();
+      double capitalAfterYears = capital * Math.pow(1 + interestRate, years);
+      System.out.printf("Capital after %d years: %.2f", years, capitalAfterYears);
+      input.close();
+   }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 13: DoublingTimeCalculator.java -->
+            <section id="project13" class="project-section">
+                <div class="project-header">
+                    <h2>محاسبه زمان دوبرابر شدن</h2>
+                    <span class="project-date">تمرین ۱۳</span>
+                </div>
+                <div class="project-description">
+                    <p>محاسبه تعداد سال برای دو برابر شدن سرمایه.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>DoublingTimeCalculator.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\13\DoublingTimeCalculator..java
+import java.util.Scanner;
+public class DoublingTimeCalculator {
+   public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the initial capital: ");
+      double initialCapital = input.nextDouble();
+      System.out.print("Enter the annual bank interest rate as a decimal: ");
+      double interestRate = input.nextDouble();
+      int years = yearsToDouble(initialCapital, interestRate);
+      System.out.printf("It will take %d years for the capital to double.", years);
+      input.close();
+   }
+   public static int yearsToDouble(double initialCapital, double interestRate) {
+      double targetCapital = initialCapital * 2;
+      double currentCapital = initialCapital;
+      int years = 0;
+      while (currentCapital < targetCapital) {
+         currentCapital *= (1 + interestRate);
+         years++;
+      }
+      return years;
+   }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 14: DoublingTimeCalculatorBuggy.java -->
+            <section id="project14" class="project-section">
+                <div class="project-header">
+                    <h2>محاسبه زمان دوبرابر شدن (اشکال‌دار)</h2>
+                    <span class="project-date">تمرین ۱۴</span>
+                </div>
+                <div class="project-description">
+                    <p>نسخه اشکال‌دار برنامه محاسبه دوبرابر شدن سرمایه.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>DoublingTimeCalculatorBuggy.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\14\DoublingTimeCalculatorBuggy.java
+import java.util.Scanner;
+public class DoubleCapitalCalculator {
+   public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the initial capital: ");
+      double capital = input.nextDouble();
+      System.out.print("Enter the annual bank interest rate (%): ");
+      double interestRate = input.nextDouble() / 100;
+      int yearsToDouble = 0;
+      while (capital < 2 * input.nextDouble()) {
+         capital *= 1 + interestRate;
+         yearsToDouble++;
+      }
+      System.out.printf("It will take %d years for the capital to double.", yearsToDouble);
+      input.close();
+   }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 15: LocalTimeReader.java -->
+            <section id="project15" class="project-section">
+                <div class="project-header">
+                    <h2>خواندن زمان محلی</h2>
+                    <span class="project-date">تمرین ۱۵</span>
+                </div>
+                <div class="project-description">
+                    <p>خواندن ۴۰ زمان به‌صورت LocalTime و نمایش آنها.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>LocalTimeReader.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\15\LocalTimeReader.java
+import java.util.Scanner;
+import java.time.LocalTime;
+public class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    LocalTime[] times = new LocalTime[40];
+    for (int i = 0; i < 40; i++) {
+      System.out.print("Enter time (hh:mm:ss): ");
+      String timeStr = input.nextLine();
+      times[i] = LocalTime.parse(timeStr);
+    }
+    for (int i = 0; i < 40; i++) {
+      System.out.println(times[i].toString());
+    }
+    input.close();
+  }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه 16: PersonDatabase.java -->
+            <section id="project16" class="project-section">
+                <div class="project-header">
+                    <h2>پایگاه داده اشخاص</h2>
+                    <span class="project-date">تمرین ۱۶</span>
+                </div>
+                <div class="project-description">
+                    <p>ذخیره ۱۰ شخص و نمایش کسانی که نامشان Ali است.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>PersonDatabase.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\16\PersonDatabase.java
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    Person[] people = new Person[10];
+    for (int i = 0; i < 10; i++) {
+      System.out.print("Enter first name: ");
+      String firstName = input.nextLine();
+      System.out.print("Enter last name: ");
+      String lastName = input.nextLine();
+      System.out.print("Enter national code: ");
+      String nationalCode = input.nextLine();
+      System.out.print("Enter date of birth (yyyy-mm-dd): ");
+      String dobStr = input.nextLine();
+      DateOfBirth dob = DateOfBirth.parse(dobStr);
+      people[i] = new Person(firstName, lastName, nationalCode, dob);
+    }
+    for (int i = 0; i < 10; i++) {
+      if (people[i].getFirstName().equals("Ali")) {
+        System.out.println(people[i].toString());
+      }
+    }
+    input.close();
+  }
+}
+class Person { /* ... existing code ... */ }
+class DateOfBirth { /* ... existing code ... */ }
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- پروژه نهایی: TeamManagementSystem.java -->
+            <section id="final" class="project-section">
+                <div class="project-header">
+                    <h2>پروژه نهایی: سیستم مدیریت تیم</h2>
+                    <span class="project-date">پروژه پایانی</span>
+                </div>
+                <div class="project-description">
+                    <p>سیستم مدیریت تیم با ذخیره و نمایش اطلاعات تیم، مربی و بازیکنان.</p>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>TeamManagementSystem.java</span>
+                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
+                            <i class="fas fa-play"></i> اجرای آنلاین
+                        </a>
+                    </div>
+                    <pre><code class="language-java">
+// filepath: ...\exam\Final\TeamManagementSystem.java
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        List<Team> teams = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Menu:");
+            System.out.println("1. Get complete information of a team");
+            System.out.println("2. Display the information of all teams");
+            System.out.println("3. Get the team code and display the complete team information");
+            System.out.println("4. Each country receives a coach and displays the name of his team");
+            System.out.println("5. Receive the player's national code and display his team name");
+            System.out.println("6. Display players who have the name Ali");
+            System.out.println("7. Display all players who are over 30 years old by the date of birth on 1/1/1402");
+            System.out.println("8. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    scanner.nextLine();
+                    System.out.print("Enter team name: ");
+                    String teamName = scanner.nextLine();
+                    System.out.print("Enter team code: ");
+                    String teamCode = scanner.nextLine();
+                    System.out.print("Enter coach's name: ");
+                    String coachName = scanner.nextLine();
+                    System.out.print("Enter coach's surname: ");
+                    String coachSurname = scanner.nextLine();
+                    System.out.print("Enter coach's national code: ");
+                    String coachNationalCode = scanner.nextLine();
+                    System.out.print("Enter coach's date of birth: ");
+                    String coachDateOfBirth = scanner.nextLine();
+                    System.out.print("Enter coach's card type: ");
+                    String coachingCardType = scanner.nextLine();
+                    Coach coach = new Coach(coachName, coachSurname, coachNationalCode, coachDateOfBirth, coachingCardType);
+                    Team team = new Team(teamName, teamCode);
+                    team.setCoach(coach);
+                    for (int i = 1; i <= 11; i++) {
+                        System.out.println("Enter details for player " + i + ":");
+                        System.out.print("Name: ");
+                        String playerName = scanner.nextLine();
+                        System.out.print("Surname: ");
+                        String playerSurname = scanner.nextLine();
+                        System.out.print("National Code: ");
+                        String playerNationalCode = scanner.nextLine();
+                        System.out.print("Date of Birth: ");
+                        String playerDateOfBirth = scanner.nextLine();
+                        System.out.print("Position: ");
+                        String playerPosition = scanner.nextLine();
+                        Player player = new Player(playerName, playerSurname, playerNationalCode, playerDateOfBirth, playerPosition);
+                        team.addPlayer(player);
+                    }
+                    teams.add(team);
+                    System.out.println("Team information added successfully.\n");
+                    break;
+                case 2:
+                    if (teams.isEmpty()) {
+                        System.out.println("No teams found.");
+                    } else {
+                        for (Team t : teams) {
+                            System.out.println("Team Name: " + t.getName());
+                            System.out.println("Team Code: " + t.getTeamCode());
+                            System.out.println("Players:");
+                            for (Player p : t.getPlayers()) {
+                                System.out.println("  Player Name: " + p.getName() + " " + p.getSurname());
+                                System.out.println("  National Code: " + p.getNationalCode());
+                                System.out.println("  Date of Birth: " + p.getDateOfBirth());
+                                System.out.println("  Position: " + p.getPosition() + "\n");
+                            }
+                            System.out.println("Coach:");
+                            Coach c = t.getCoach();
+                            System.out.println("  Name: " + c.getName() + " " + c.getSurname());
+                            System.out.println("  National Code: " + c.getNationalCode());
+                            System.out.println("  Date of Birth: " + c.getDateOfBirth());
+                            System.out.println("  Coaching Card Type: " + c.getCoachingCardType() + "\n");
+                        }
+                    }
+                    break;
+                case 3:
+                    scanner.nextLine();
+                    System.out.print("Enter team code: ");
+                    String teamCodeInput = scanner.nextLine();
+                    boolean teamFound = false;
+                    for (Team t : teams) {
+                        if (t.getTeamCode().equals(teamCodeInput)) {
+                            teamFound = true;
+                            System.out.println("Team Name: " + t.getName());
+                            System.out.println("Team Code: " + t.getTeamCode());
+                            System.out.println("Players:");
+                            for (Player p : t.getPlayers()) {
+                                System.out.println("  Player Name: " + p.getName() + " " + p.getSurname());
+                                System.out.println("  National Code: " + p.getNationalCode());
+                                System.out.println("  Date of Birth: " + p.getDateOfBirth());
+                                System.out.println("  Position: " + p.getPosition() + "\n");
+                            }
+                            System.out.println("Coach:");
+                            Coach c2 = t.getCoach();
+                            System.out.println("  Name: " + c2.getName() + " " + c2.getSurname());
+                            System.out.println("  National Code: " + c2.getNationalCode());
+                            System.out.println("  Date of Birth: " + c2.getDateOfBirth());
+                            System.out.println("  Coaching Card Type: " + c2.getCoachingCardType() + "\n");
+                            break;
+                        }
+                    }
+                    if (!teamFound) System.out.println("No team found with the given code.");
+                    break;
+                case 4:
+                    scanner.nextLine();
+                    System.out.print("Enter coach's national code: ");
+                    String coachNationalCodeInput = scanner.nextLine();
+                    boolean coachFound = false;
+                    for (Team t : teams) {
+                        Coach c3 = t.getCoach();
+                        if (c3.getNationalCode().equals(coachNationalCodeInput)) {
+                            coachFound = true;
+                            System.out.println("Coach Name: " + c3.getName() + " " + c3.getSurname());
+                            System.out.println("Team Name: " + t.getName());
+                            System.out.println("Team Code: " + t.getTeamCode() + "\n");
+                            break;
+                        }
+                    }
+                    if (!coachFound) System.out.println("No coach found with the given national code.");
+                    break;
+                case 5:
+                    scanner.nextLine();
+                    System.out.print("Enter player's national code: ");
+                    String playerNationalCodeInput = scanner.nextLine();
+                    boolean playerFound = false;
+                    for (Team t : teams) {
+                        for (Player p : t.getPlayers()) {
+                            if (p.getNationalCode().equals(playerNationalCodeInput)) {
+                                playerFound = true;
+                                System.out.println("Player Name: " + p.getName() + " " + p.getSurname());
+                                System.out.println("Team Name: " + t.getName());
+                                System.out.println("Team Code: " + t.getTeamCode() + "\n");
+                                break;
+                            }
+                        }
+                        if (playerFound) break;
+                    }
+                    if (!playerFound) System.out.println("No player found with the given national code.");
+                    break;
+                case 6:
+                    boolean aliFound = false;
+                    for (Team t : teams) {
+                        for (Player p : t.getPlayers()) {
+                            if (p.getName().equalsIgnoreCase("Ali")) {
+                                aliFound = true;
+                                System.out.println("Player Name: " + p.getName() + " " + p.getSurname());
+                                System.out.println("Team Name: " + t.getName());
+                                System.out.println("Team Code: " + t.getTeamCode() + "\n");
+                            }
+                        }
+                    }
+                    if (!aliFound) System.out.println("No players with the name Ali found.");
+                    break;
+                case 7:
+                    boolean over30Found = false;
+                    for (Team t : teams) {
+                        for (Player p : t.getPlayers()) {
+                            String[] dobParts = p.getDateOfBirth().split("/");
+                            int yearOfBirth = Integer.parseInt(dobParts[2]);
+                            if (yearOfBirth < 1372) {
+                                over30Found = true;
+                                System.out.println("Player Name: " + p.getName() + " " + p.getSurname());
+                                System.out.println("Team Name: " + t.getName());
+                                System.out.println("Team Code: " + t.getTeamCode() + "\n");
+                            }
+                        }
+                    }
+                    if (!over30Found) System.out.println("No players over 30 years old found.");
+                    break;
+                case 8:
+                    System.out.println("Exiting the program...");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please try again.\n");
+            }
+        }
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
