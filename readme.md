@@ -82,9 +82,7 @@ Each numbered folder contains one exercise, and the **Final** folder hosts the c
     Computes years needed for an investment to double.  
     [13/DoublingTimeCalculator..java](13/DoublingTimeCalculator..java)
 
-14. **Buggy Doubling Calculator**  
-    Faulty version of the doubling time program.  
-    [14/DoublingTimeCalculatorBuggy.java](14/DoublingTimeCalculatorBuggy.java)
+14. **???**
 
 15. **LocalTime Reader**  
     Reads 40 `LocalTime` entries and displays them.  
