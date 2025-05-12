@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-public class Main {
+public class PersonDatabase {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    Person[] people = new Person[10];
+    Person[] people = new Person[2];
     
     // Read information of people from the user
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 2; i++) {
       System.out.print("Enter first name: ");
       String firstName = input.nextLine();
       System.out.print("Enter last name: ");
@@ -21,7 +21,7 @@ public class Main {
     }
     
     // Display the details of those whose name is Ali
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 2; i++) {
       if (people[i].getFirstName().equals("Ali")) {
         System.out.println(people[i].toString());
       }

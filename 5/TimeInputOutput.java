@@ -4,9 +4,6 @@ public class Time {
   private int hours;
   private int minutes;
 
-  public Time() {
-    // constructor
-  }
 
   public void readTime() {
     Scanner scanner = new Scanner(System.in);
@@ -23,14 +20,18 @@ public class Time {
   }
 
   public static void main(String[] args) {
-    Time[] times = new Time[5];
+    int howManyTimes;
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("How many times do you want to enter? ");
+    howManyTimes = scanner.nextInt();
+    Time[] times = new Time[howManyTimes];
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < howManyTimes; i++) {
       times[i] = new Time();
       times[i].readTime();
     }
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < howManyTimes; i++) {
       times[i].displayTime();
     }
   }

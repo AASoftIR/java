@@ -34,7 +34,7 @@
                     <li><a href="#project11">محاسبه جمع توان‌ها</a></li>
                     <li><a href="#project12">محاسبه سرمایه آینده</a></li>
                     <li><a href="#project13">محاسبه زمان دوبرابر شدن</a></li>
-                    <li><a href="#project14">محاسبه زمان دوبرابر شدن (اشکال‌دار)</a></li>
+
                     <li><a href="#project15">خواندن زمان محلی</a></li>
                     <li><a href="#project16">پایگاه داده اشخاص</a></li>
                     <li><a href="#final">پروژه نهایی: سیستم مدیریت تیم</a></li>
@@ -196,15 +196,18 @@ public class RectangleDrawer {
                     <pre><code class="language-java">
 // filepath: ...\exam\4\TimeShifting.java
 public class TimeShifting {
-   public static void main(String[] args) {
-       Time t1 = new Time(10, 12, 14);
-       Time t2 = new Time(12, 18, 20);
-       t1.minute += 6;
-       t2.hour -= 2;
-       t1.displayTime();
-       t2.displayTime();
-   }
+    public static void main(String[] args) {
+        Time t1 = new Time(10, 12, 14);
+        Time t2 = new Time(12, 18, 20);
+        
+        t1.minute += 6;
+        t2.hour -= 2;
+        
+        t1.displayTime();
+        t2.displayTime();
+    }
 }
+
                     </code></pre>
                 </div>
             </section>
@@ -228,31 +231,44 @@ public class TimeShifting {
                     <pre><code class="language-java">
 // filepath: ...\exam\5\TimeInputOutput.java
 import java.util.Scanner;
+
 public class Time {
   private int hours;
   private int minutes;
-  public Time() {}
+
+
   public void readTime() {
     Scanner scanner = new Scanner(System.in);
+
     System.out.print("Enter hours: ");
     hours = scanner.nextInt();
+
     System.out.print("Enter minutes: ");
     minutes = scanner.nextInt();
   }
+
   public void displayTime() {
     System.out.println("Time: " + hours + ":" + minutes);
   }
+
   public static void main(String[] args) {
-    Time[] times = new Time[5];
-    for (int i = 0; i < 5; i++) {
+    int howManyTimes;
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("How many times do you want to enter? ");
+    howManyTimes = scanner.nextInt();
+    Time[] times = new Time[howManyTimes];
+
+    for (int i = 0; i < howManyTimes; i++) {
       times[i] = new Time();
       times[i].readTime();
     }
-    for (int i = 0; i < 5; i++) {
+
+    for (int i = 0; i < howManyTimes; i++) {
       times[i].displayTime();
     }
   }
 }
+
                     </code></pre>
                 </div>
             </section>
@@ -325,16 +341,19 @@ public class Time {
 public class ReadAndDisplayTimes {
     public static void main(String[] args) {
         Time[] times = new Time[5];
+        
         for (int i = 0; i < 5; i++) {
             Time t = new Time();
             t.readTime();
             times[i] = t;
         }
+        
         for (int i = 0; i < 5; i++) {
             times[i].displayTime();
         }
     }
 }
+
                     </code></pre>
                 </div>
             </section>
@@ -360,11 +379,13 @@ public class ReadAndDisplayTimes {
 public class FindLargestTime {
     public static void main(String[] args) {
         Time[] times = new Time[4];
+        
         for (int i = 0; i < 4; i++) {
             Time t = new Time();
             t.readTime();
             times[i] = t;
         }
+        
         Time largest = times[0];
         for (int i = 1; i < 4; i++) {
             if (times[i].hour > largest.hour) {
@@ -375,9 +396,11 @@ public class FindLargestTime {
                 largest = times[i];
             }
         }
-        largest.displayTime();
+        
+        System.out.println("The largest time is: " + largest.hour + ":" + largest.minute + ":" + largest.second);
     }
 }
+
                     </code></pre>
                 </div>
             </section>
@@ -585,44 +608,6 @@ public class DoublingTimeCalculator {
                 </div>
             </section>
 
-            <!-- پروژه 14: DoublingTimeCalculatorBuggy.java -->
-            <section id="project14" class="project-section">
-                <div class="project-header">
-                    <h2>محاسبه زمان دوبرابر شدن (اشکال‌دار)</h2>
-                    <span class="project-date">تمرین ۱۴</span>
-                </div>
-                <div class="project-description">
-                    <p>نسخه اشکال‌دار برنامه محاسبه دوبرابر شدن سرمایه.</p>
-                </div>
-                <div class="code-container">
-                    <div class="code-header">
-                        <span>DoublingTimeCalculatorBuggy.java</span>
-                        <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="run-code-btn">
-                            <i class="fas fa-play"></i> اجرای آنلاین
-                        </a>
-                    </div>
-                    <pre><code class="language-java">
-// filepath: ...\exam\14\DoublingTimeCalculatorBuggy.java
-import java.util.Scanner;
-public class DoubleCapitalCalculator {
-   public static void main(String[] args) {
-      Scanner input = new Scanner(System.in);
-      System.out.print("Enter the initial capital: ");
-      double capital = input.nextDouble();
-      System.out.print("Enter the annual bank interest rate (%): ");
-      double interestRate = input.nextDouble() / 100;
-      int yearsToDouble = 0;
-      while (capital < 2 * input.nextDouble()) {
-         capital *= 1 + interestRate;
-         yearsToDouble++;
-      }
-      System.out.printf("It will take %d years for the capital to double.", yearsToDouble);
-      input.close();
-   }
-}
-                    </code></pre>
-                </div>
-            </section>
 
             <!-- پروژه 15: LocalTimeReader.java -->
             <section id="project15" class="project-section">
@@ -644,21 +629,26 @@ public class DoubleCapitalCalculator {
 // filepath: ...\exam\15\LocalTimeReader.java
 import java.util.Scanner;
 import java.time.LocalTime;
+
 public class Main {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    LocalTime[] times = new LocalTime[40];
-    for (int i = 0; i < 40; i++) {
+    LocalTime[] times = new LocalTime[2];
+    
+    // Read times from the user
+    for (int i = 0; i < 2; i++) {
       System.out.print("Enter time (hh:mm:ss): ");
       String timeStr = input.nextLine();
       times[i] = LocalTime.parse(timeStr);
     }
-    for (int i = 0; i < 40; i++) {
+    
+    // Display the times one by one
+    for (int i = 0; i < 2; i++) {
       System.out.println(times[i].toString());
     }
-    input.close();
   }
 }
+
                     </code></pre>
                 </div>
             </section>
@@ -682,11 +672,14 @@ public class Main {
                     <pre><code class="language-java">
 // filepath: ...\exam\16\PersonDatabase.java
 import java.util.Scanner;
-public class Main {
+
+public class PersonDatabase {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    Person[] people = new Person[10];
-    for (int i = 0; i < 10; i++) {
+    Person[] people = new Person[2];
+    
+    // Read information of people from the user
+    for (int i = 0; i < 2; i++) {
       System.out.print("Enter first name: ");
       String firstName = input.nextLine();
       System.out.print("Enter last name: ");
@@ -696,18 +689,78 @@ public class Main {
       System.out.print("Enter date of birth (yyyy-mm-dd): ");
       String dobStr = input.nextLine();
       DateOfBirth dob = DateOfBirth.parse(dobStr);
+      
       people[i] = new Person(firstName, lastName, nationalCode, dob);
     }
-    for (int i = 0; i < 10; i++) {
+    
+    // Display the details of those whose name is Ali
+    for (int i = 0; i < 2; i++) {
       if (people[i].getFirstName().equals("Ali")) {
         System.out.println(people[i].toString());
       }
     }
-    input.close();
   }
 }
-class Person { /* ... existing code ... */ }
-class DateOfBirth { /* ... existing code ... */ }
+
+class Person {
+  private String firstName;
+  private String lastName;
+  private String nationalCode;
+  private DateOfBirth dob;
+  
+  public Person(String firstName, String lastName, String nationalCode, DateOfBirth dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.nationalCode = nationalCode;
+    this.dob = dob;
+  }
+  
+  public String getFirstName() {
+    return firstName;
+  }
+  
+  public String getLastName() {
+    return lastName;
+  }
+  
+  public String getNationalCode() {
+    return nationalCode;
+  }
+  
+  public DateOfBirth getDateOfBirth() {
+    return dob;
+  }
+  
+  public String toString() {
+    return "First Name: " + firstName + ", Last Name: " + lastName +
+      ", National Code: " + nationalCode + ", Date of Birth: " + dob.toString();
+  }
+}
+
+class DateOfBirth {
+  private int year;
+  private int month;
+  private int day;
+  
+  public DateOfBirth(int year, int month, int day) {
+    this.year = year;
+    this.month = month;
+    this.day = day;
+  }
+  
+  public static DateOfBirth parse(String dobStr) {
+    String[] parts = dobStr.split("-");
+    int year = Integer.parseInt(parts[0]);
+    int month = Integer.parseInt(parts[1]);
+    int day = Integer.parseInt(parts[2]);
+    return new DateOfBirth(year, month, day);
+  }
+  
+  public String toString() {
+    return year + "-" + month + "-" + day;
+  }
+}
+
                     </code></pre>
                 </div>
             </section>
@@ -733,10 +786,12 @@ class DateOfBirth { /* ... existing code ... */ }
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-public class Main {
+
+public class TeamManagementSystem {
     public static void main(String[] args) {
         List<Team> teams = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
+
         while (true) {
             System.out.println("Menu:");
             System.out.println("1. Get complete information of a team");
@@ -747,47 +802,69 @@ public class Main {
             System.out.println("6. Display players who have the name Ali");
             System.out.println("7. Display all players who are over 30 years old by the date of birth on 1/1/1402");
             System.out.println("8. Exit");
+
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
+
             switch (choice) {
                 case 1:
-                    scanner.nextLine();
+                    // Get complete information of a team
+                    scanner.nextLine(); // Consume the newline character
+
                     System.out.print("Enter team name: ");
                     String teamName = scanner.nextLine();
+
                     System.out.print("Enter team code: ");
                     String teamCode = scanner.nextLine();
+
                     System.out.print("Enter coach's name: ");
                     String coachName = scanner.nextLine();
+
                     System.out.print("Enter coach's surname: ");
                     String coachSurname = scanner.nextLine();
+
                     System.out.print("Enter coach's national code: ");
                     String coachNationalCode = scanner.nextLine();
+
                     System.out.print("Enter coach's date of birth: ");
                     String coachDateOfBirth = scanner.nextLine();
+
                     System.out.print("Enter coach's card type: ");
                     String coachingCardType = scanner.nextLine();
+
                     Coach coach = new Coach(coachName, coachSurname, coachNationalCode, coachDateOfBirth, coachingCardType);
+
                     Team team = new Team(teamName, teamCode);
                     team.setCoach(coach);
+
                     for (int i = 1; i <= 11; i++) {
                         System.out.println("Enter details for player " + i + ":");
                         System.out.print("Name: ");
                         String playerName = scanner.nextLine();
+
                         System.out.print("Surname: ");
                         String playerSurname = scanner.nextLine();
+
                         System.out.print("National Code: ");
                         String playerNationalCode = scanner.nextLine();
+
                         System.out.print("Date of Birth: ");
                         String playerDateOfBirth = scanner.nextLine();
+
                         System.out.print("Position: ");
                         String playerPosition = scanner.nextLine();
+
                         Player player = new Player(playerName, playerSurname, playerNationalCode, playerDateOfBirth, playerPosition);
                         team.addPlayer(player);
                     }
+
                     teams.add(team);
-                    System.out.println("Team information added successfully.\n");
+                    System.out.println("Team information added successfully.");
+                    System.out.println();
                     break;
+
                 case 2:
+                    // Display the information of all teams
                     if (teams.isEmpty()) {
                         System.out.println("No teams found.");
                     } else {
@@ -799,21 +876,27 @@ public class Main {
                                 System.out.println("  Player Name: " + p.getName() + " " + p.getSurname());
                                 System.out.println("  National Code: " + p.getNationalCode());
                                 System.out.println("  Date of Birth: " + p.getDateOfBirth());
-                                System.out.println("  Position: " + p.getPosition() + "\n");
+                                System.out.println("  Position: " + p.getPosition());
+                                System.out.println();
                             }
                             System.out.println("Coach:");
                             Coach c = t.getCoach();
                             System.out.println("  Name: " + c.getName() + " " + c.getSurname());
                             System.out.println("  National Code: " + c.getNationalCode());
                             System.out.println("  Date of Birth: " + c.getDateOfBirth());
-                            System.out.println("  Coaching Card Type: " + c.getCoachingCardType() + "\n");
+                            System.out.println("  Coaching Card Type: " + c.getCoachingCardType());
+                            System.out.println();
                         }
                     }
                     break;
+
                 case 3:
-                    scanner.nextLine();
+                    // Get the team code and display the complete team information
+                    scanner.nextLine(); // Consume the newline character
+
                     System.out.print("Enter team code: ");
                     String teamCodeInput = scanner.nextLine();
+
                     boolean teamFound = false;
                     for (Team t : teams) {
                         if (t.getTeamCode().equals(teamCodeInput)) {
@@ -825,40 +908,57 @@ public class Main {
                                 System.out.println("  Player Name: " + p.getName() + " " + p.getSurname());
                                 System.out.println("  National Code: " + p.getNationalCode());
                                 System.out.println("  Date of Birth: " + p.getDateOfBirth());
-                                System.out.println("  Position: " + p.getPosition() + "\n");
+                                System.out.println("  Position: " + p.getPosition());
+                                System.out.println();
                             }
                             System.out.println("Coach:");
-                            Coach c2 = t.getCoach();
-                            System.out.println("  Name: " + c2.getName() + " " + c2.getSurname());
-                            System.out.println("  National Code: " + c2.getNationalCode());
-                            System.out.println("  Date of Birth: " + c2.getDateOfBirth());
-                            System.out.println("  Coaching Card Type: " + c2.getCoachingCardType() + "\n");
+                            Coach c = t.getCoach();
+                            System.out.println("  Name: " + c.getName() + " " + c.getSurname());
+                            System.out.println("  National Code: " + c.getNationalCode());
+                            System.out.println("  Date of Birth: " + c.getDateOfBirth());
+                            System.out.println("  Coaching Card Type: " + c.getCoachingCardType());
+                            System.out.println();
                             break;
                         }
                     }
-                    if (!teamFound) System.out.println("No team found with the given code.");
+
+                    if (!teamFound) {
+                        System.out.println("No team found with the given code.");
+                    }
                     break;
+
                 case 4:
-                    scanner.nextLine();
+                    // Each country receives a coach and displays the name of his team
+                    scanner.nextLine(); // Consume the newline character
+
                     System.out.print("Enter coach's national code: ");
                     String coachNationalCodeInput = scanner.nextLine();
+
                     boolean coachFound = false;
                     for (Team t : teams) {
-                        Coach c3 = t.getCoach();
-                        if (c3.getNationalCode().equals(coachNationalCodeInput)) {
+                        Coach c = t.getCoach();
+                        if (c.getNationalCode().equals(coachNationalCodeInput)) {
                             coachFound = true;
-                            System.out.println("Coach Name: " + c3.getName() + " " + c3.getSurname());
+                            System.out.println("Coach Name: " + c.getName() + " " + c.getSurname());
                             System.out.println("Team Name: " + t.getName());
-                            System.out.println("Team Code: " + t.getTeamCode() + "\n");
+                            System.out.println("Team Code: " + t.getTeamCode());
+                            System.out.println();
                             break;
                         }
                     }
-                    if (!coachFound) System.out.println("No coach found with the given national code.");
+
+                    if (!coachFound) {
+                        System.out.println("No coach found with the given national code.");
+                    }
                     break;
+
                 case 5:
-                    scanner.nextLine();
+                    // Receive the player's national code and display his team name
+                    scanner.nextLine(); // Consume the newline character
+
                     System.out.print("Enter player's national code: ");
                     String playerNationalCodeInput = scanner.nextLine();
+
                     boolean playerFound = false;
                     for (Team t : teams) {
                         for (Player p : t.getPlayers()) {
@@ -866,15 +966,23 @@ public class Main {
                                 playerFound = true;
                                 System.out.println("Player Name: " + p.getName() + " " + p.getSurname());
                                 System.out.println("Team Name: " + t.getName());
-                                System.out.println("Team Code: " + t.getTeamCode() + "\n");
+                                System.out.println("Team Code: " + t.getTeamCode());
+                                System.out.println();
                                 break;
                             }
                         }
-                        if (playerFound) break;
+                        if (playerFound) {
+                            break;
+                        }
                     }
-                    if (!playerFound) System.out.println("No player found with the given national code.");
+
+                    if (!playerFound) {
+                        System.out.println("No player found with the given national code.");
+                    }
                     break;
+
                 case 6:
+                    // Display players who have the name Ali
                     boolean aliFound = false;
                     for (Team t : teams) {
                         for (Player p : t.getPlayers()) {
@@ -882,38 +990,53 @@ public class Main {
                                 aliFound = true;
                                 System.out.println("Player Name: " + p.getName() + " " + p.getSurname());
                                 System.out.println("Team Name: " + t.getName());
-                                System.out.println("Team Code: " + t.getTeamCode() + "\n");
+                                System.out.println("Team Code: " + t.getTeamCode());
+                                System.out.println();
                             }
                         }
                     }
-                    if (!aliFound) System.out.println("No players with the name Ali found.");
+
+                    if (!aliFound) {
+                        System.out.println("No players with the name Ali found.");
+                    }
                     break;
+
                 case 7:
+                    // Display all players who are over 30 years old by the date of birth on 1/1/1402
                     boolean over30Found = false;
                     for (Team t : teams) {
                         for (Player p : t.getPlayers()) {
                             String[] dobParts = p.getDateOfBirth().split("/");
                             int yearOfBirth = Integer.parseInt(dobParts[2]);
+
                             if (yearOfBirth < 1372) {
                                 over30Found = true;
                                 System.out.println("Player Name: " + p.getName() + " " + p.getSurname());
                                 System.out.println("Team Name: " + t.getName());
-                                System.out.println("Team Code: " + t.getTeamCode() + "\n");
+                                System.out.println("Team Code: " + t.getTeamCode());
+                                System.out.println();
                             }
                         }
                     }
-                    if (!over30Found) System.out.println("No players over 30 years old found.");
+
+                    if (!over30Found) {
+                        System.out.println("No players over 30 years old found.");
+                    }
                     break;
+
                 case 8:
+                    // Exit the program
                     System.out.println("Exiting the program...");
-                    scanner.close();
                     return;
+
                 default:
-                    System.out.println("Invalid choice. Please try again.\n");
+                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println();
             }
         }
     }
 }
+
                     </code></pre>
                 </div>
             </section>
