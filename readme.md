@@ -109,7 +109,7 @@ A console app to store and query teams, coaches, and players.
 ## 📖 Documentation
 
 A browsable HTML version lives in the `docs/` folder:  
-[docs/index.html](docs/index.html)
+[docs/index.html](https://aasoftir.github.io/java-exam/)
 
 ---
 
