@@ -20,7 +20,7 @@ Each numbered folder contains one exercise, and the **Final** folder hosts the c
 - `11/` – Power sum calculator
 - `12/` – Future capital calculator
 - `13/` – Doubling time calculator
-- `14/` – (Buggy) doubling time calculator
+- `14/` – ???
 - `15/` – LocalTime reader
 - `16/` – Person database
 - `Final/` – Team Management System (final project)
